@@ -3,10 +3,16 @@
 @import url("https://use.typekit.net/wmd8hbj.css");
 
 :root {
+    --color-secundario: black;
+    --color-tres: cornflowerblue;
+    --color-cuatro: crimson;
+    --color-main: #F3F5FC;
+    --color-principal: white;
     --color-sombreado: rgba(0, 0, 0, 0.3);
+    --color-translucido: rgba(0, 0, 0, 0.5);
+    --fuente-alternativa: "tilt-warp", sans-serif;
     --fuente-principal: "shantell-sans-informal", sans-serif;
     --fuente-secundaria: "Patrick Hand", cursive;
-    --fuente-alternativa: "tilt-warp", sans-serif;
 }
 
 * {
@@ -40,15 +46,19 @@ span:last-child {
 }
 
 .encabezado {
-    background-color: aliceblue;
+    background-color: var(--color-principal);
+    border-bottom: 0.5rem solid var(--color-tres);
+    color: var(--color-tres);
     font-family: var(--fuente-secundaria);
     font-style: normal;
     font-weight: 700;
     font-size: x-large;
     padding: 0.5rem 2rem;
+    text-align: center;
 }
 
 .main {
+    background-color: var(--color-principal);
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -84,6 +94,8 @@ span:last-child {
 }
 
 .intermedio-izquierda-input-texto {
+    background-color: var(--color-principal);
+    border: 0.1rem solid var(--color-tres);
     font-family: var(--fuente-secundaria);
     font-style: normal;
     font-weight: 700;
@@ -96,6 +108,7 @@ span:last-child {
 
 .intermedio-izquierda-advertencia {
     align-items: center;
+    background-color: var(--color-main);
     box-shadow: 0.5rem 0.5rem 0.5rem var(--color-sombreado);
     display: flex;
     text-align: center;
@@ -103,13 +116,15 @@ span:last-child {
 }
 
 .intermedio-span {
-    border-right: 0.1rem solid rgb(0, 0, 0);
+    border-right: 0.1rem solid var(--color-secundario);
     display: inline-block;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
 
 .intermedio-izquierda-input-numero {
+    background-color: var(--color-principal);
+    border: 0.1rem solid var(--color-tres);
     font-family: var(--fuente-secundaria);
     font-style: normal;
     font-weight: 700;
@@ -126,17 +141,26 @@ span:last-child {
 }
 
 .intermedio-izquierda-boton {
-    border: solid;
     border-radius: 2rem;
     font-family: var(--fuente-secundaria);
     font-style: normal;
     font-weight: 900;
     font-size: 2rem;
     padding-bottom: 0.35rem;
+    transition: background-color 0.5s ease;
     width: 15%;
 }
 
-.intermedio-izquierda-boton:hover {}
+.intermedio-izquierda-boton:enabled {
+    background-color: var(--color-principal);
+    outline: 0.2rem solid var(--color-secundario);
+}
+
+.intermedio-izquierda-boton:enabled:hover {
+    color: var(--color-principal);
+    background-color: var(--color-tres);
+    outline: 0.2rem solid var(--color-secundario);
+}
 
 .intermedio-derecha {
     align-items: center;
@@ -151,17 +175,26 @@ span:last-child {
 }
 
 .intermedio-derecha-boton {
-    border: solid;
     border-radius: 2rem;
     font-family: var(--fuente-secundaria);
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
     padding-bottom: 0.35rem;
+    transition: background-color 0.5s ease;
     width: 60%;
 }
 
-.intermedio-derecha-boton:hover {}
+.intermedio-derecha-boton:enabled {
+    background-color: var(--color-principal);
+    outline: 0.2rem solid var(--color-secundario);
+}
+
+.intermedio-derecha-boton:enabled:hover {
+    color: var(--color-principal);
+    background-color: var(--color-cuatro);
+    outline: 0.2rem solid var(--color-secundario);
+}
 
 .main-resultados {
     display: flex;
@@ -172,10 +205,12 @@ span:last-child {
 
 .pie-de-página {
     align-items: center;
-    background-color: black;
-    color: white;
+    background-color: var(--color-secundario);
+    border-top: 0.5rem solid var(--color-tres);
+    color: var(--color-principal);
     display: flex;
     font-family: var(--fuente-alternativa);
+    font-weight: 200;
     gap: 1rem;
     height: auto;
     justify-content: center;
@@ -204,6 +239,7 @@ span:last-child {
 }
 
 .modal {
+    background-color: var(--color-translucido);
     display: none;
     height: 100%;
     left: 0;
@@ -215,17 +251,20 @@ span:last-child {
 
 .modal-bloque {
     align-items: center;
-    background-color: white;
+    background-color: var(--color-principal);
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    height: 30%;
+    gap: 1.5rem;
+    height: 35%;
     justify-content: center;
     margin: 20% auto;
-    width: 60%;
+    outline: 0.5rem solid var(--color-secundario);
+    width: 65%;
 }
 
 .modal-bloque-titulo {
+    color: var(--color-cuatro);
     font-size: 3rem;
 }
 
@@ -234,6 +273,18 @@ span:last-child {
 }
 
 .modal-bloque-boton {
+    border-radius: 2rem;
+    font-family: var(--fuente-secundaria);
+    font-style: normal;
+    font-weight: 900;
     font-size: x-large;
-    padding: 1rem;
+    padding: 0.5rem;
+    transition: background-color 0.5s ease;
+    width: 15%;
+}
+
+.modal-bloque-boton:hover {
+    color: var(--color-principal);
+    background-color: var(--color-cuatro);
+    outline: 0.2rem solid var(--color-secundario);
 }

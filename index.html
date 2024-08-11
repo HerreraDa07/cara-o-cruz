@@ -21,25 +21,24 @@
         </strong>
         <div class="intermedio">
             <section class="intermedio-izquierda">
-                <h2 class="intermedio-izquierda-informacion">
-                    Para jugar debes escoger el lado de la moneda <br>
-                    Luego debes ingresar el valor de tu apuesta
+                <h2 class="intermedio-izquierda-informacion" id="informacion">
+                    Para jugar, debes escoger el lado de la moneda <br>
+                    Luego debes ingresar el valor de tu apuesta <br>
+                    Cuando ingreses tu apuesta, no podrás cambiar el lado de la moneda elegido
                 </h2>
                 <input class="intermedio-izquierda-input-texto" type="text" placeholder="Cara o Cruz" id="lado"
                     autocomplete="off">
                 <p class="intermedio-izquierda-advertencia">
-                    <span class="intermedio-span">Solo puedes ingresar la palabra "Cara" o "Cruz"</span>
-                    <span class="intermedio-span"> Cualquier otra palabra sera considerada invalida
+                    <span class="intermedio-span">Solo puedes ingresar la palabra "cara" o "cruz"</span>
+                    <span class="intermedio-span"> Cualquier otra palabra será considerada inválida
                         <br></span>
                     <span class="intermedio-span"> No se admiten caracteres especiales</span>
                 </p>
                 <input class="intermedio-izquierda-input-numero" type="number" placeholder="Valor de la apuesta"
                     id="apuesta">
                 <p class="intermedio-izquierda-advertencia">
-                    <span class="intermedio-span"> El valor de la apuesta debe ser mayor a 5000
-                        <br></span>
-                    <span class="intermedio-span"> Tambien debe ser 5000 menos a su dinero
-                        actual</span>
+                    <span class="intermedio-span"> El valor de la apuesta debe ser mayor a 5000 <br></span>
+                    <span class="intermedio-span"> También debe ser 5000 menos a su dinero actual</span>
                 </p>
                 <button class="intermedio-izquierda-boton" type="button" onclick="jugar()"
                     id="botonJugar">Jugar</button>

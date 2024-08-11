@@ -13,18 +13,19 @@ function cambiarTextosHtml(id, texto) {
     textoHtml.innerHTML = texto;
 }
 function datos() {
-    cambiarTextosHtml("victorias", `Has ganado: ${victorias} ${victorias == 1 ? "vez" : "veces"}`);
-    cambiarTextosHtml("derrotas", `Has perdido: ${derrotas} ${derrotas == 1 ? "vez" : "veces"}`);
-    cambiarTextosHtml("dinero", `Tu dinero es: ${dinero}`);
+    cambiarTextosHtml("victorias", `Has ganado: <span style="color:forestgreen">${victorias}</span> ${victorias == 1 ? "vez" : "veces"}`);
+    cambiarTextosHtml("derrotas", `Has perdido: <span style="color:red">${derrotas}</span> ${derrotas == 1 ? "vez" : "veces"}`);
+    cambiarTextosHtml("dinero", `Tu dinero es: <span style="color:gold">${dinero}</span>`);
 }
 function iniciar() {
     document.getElementById("botonJugar").setAttribute("disabled", true);
     document.getElementById("botonRepetir").setAttribute("disabled", true);
     document.getElementById("apuesta").setAttribute("disabled", true);
     document.getElementById("lado").addEventListener("input", function () {
+        if (this.value.length > 4) { this.value = this.value.slice(0, 4); }
         this.value = this.value.replace(/[^a-zA-Z]/g, "");
         this.value = this.value.toLowerCase();
-        if (this.value == "cara" || this.value == "Cruz") { document.getElementById("apuesta").removeAttribute("disabled"); }
+        if (this.value == "cara" || this.value == "cruz") { document.getElementById("apuesta").removeAttribute("disabled"); }
         else { document.getElementById("apuesta").setAttribute("disabled", true); }
     });
     document.getElementById("apuesta").addEventListener("input", function () {
@@ -45,6 +46,9 @@ function jugar() {
     let apuesta = juego.value;
     lado == azar ? victorias++ : derrotas++;
     dinero = (lado == azar) ? dinero + apuesta * 2 : dinero - apuesta;
+    cambiarTextosHtml("informacion", `Has escogido <span style="color:${lado == azar ? "forestgreen" : "red"}">${lado}</span>
+         y salio <span style="color:${lado == azar ? "forestgreen" : "red"}">${azar}</span> <br>
+         ${lado == azar ? "¡Felicitaciones! Has ganado" : "Has perdido"}`)
     document.getElementById("botonJugar").setAttribute("disabled", true);
     document.getElementById("botonRepetir").removeAttribute("disabled");
     document.getElementById("lado").setAttribute("disabled", true);
@@ -59,7 +63,7 @@ function modal() {
 }
 function numeroRandom() {
     let numero = Math.floor(Math.random() * 2) + 1;
-    let lado = (numero == 1) ? "cara" : "Cruz";
+    let lado = (numero == 1) ? "cara" : "cruz";
     return lado;
 }
 function reiniciar() {
@@ -73,6 +77,9 @@ function reiniciar() {
     document.getElementById("botonRepetir").setAttribute("disabled", true);
 }
 function repetir() {
+    cambiarTextosHtml("informacion", `Para jugar, debes escoger el lado de la moneda <br>
+        Luego debes ingresar el valor de tu apuesta <br>
+        Cuando ingreses tu apuesta, no podrás cambiar el lado de la moneda elegido`)
     document.getElementById("lado").removeAttribute("disabled");
     document.getElementById("lado").value = "";
     document.getElementById("apuesta").value = "";
