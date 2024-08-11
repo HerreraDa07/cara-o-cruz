@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url("https://use.typekit.net/wmd8hbj.css");
+@import url("https://use.typekit.net/wmd8hbj.css");
+
+:root {
+    --color-sombreado: rgba(0, 0, 0, 0.3);
+    --fuente-principal: "shantell-sans-informal", sans-serif;
+    --fuente-secundaria: "Patrick Hand", cursive;
+    --fuente-alternativa: "tilt-warp", sans-serif;
+}
+
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fuente-principal);
+    font-style: normal;
+    font-weight: 700;
+    height: 100vh;
+}
+
+i {
+    padding-right: 0.3rem;
+}
+
+strong {
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+}
+
+span:last-child {
+    border-right: none;
+}
+
+.encabezado {
+    background-color: aliceblue;
+    font-family: var(--fuente-secundaria);
+    font-style: normal;
+    font-weight: 700;
+    font-size: x-large;
+    padding: 0.5rem 2rem;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.main-dinero {
+    font-size: larger;
+    padding: 0rem 1rem;
+}
+
+.intermedio {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.intermedio-izquierda {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 2rem;
+    text-align: center;
+}
+
+.intermedio-izquierda-informacion {
+    font-family: var(--fuente-alternativa);
+    font-weight: 500;
+}
+
+.intermedio-izquierda-input-texto {
+    font-family: var(--fuente-secundaria);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    outline: none;
+    padding: 0.5rem 0rem;
+    width: 30%;
+}
+
+.intermedio-izquierda-advertencia {
+    align-items: center;
+    box-shadow: 0.5rem 0.5rem 0.5rem var(--color-sombreado);
+    display: flex;
+    text-align: center;
+    padding: 0.5rem 0rem;
+}
+
+.intermedio-span {
+    border-right: 0.1rem solid rgb(0, 0, 0);
+    display: inline-block;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.intermedio-izquierda-input-numero {
+    font-family: var(--fuente-secundaria);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    outline: none;
+    padding: 0.5rem 0rem;
+    width: 40%;
+}
+
+.intermedio-izquierda-input-numero::-webkit-inner-spin-button,
+.intermedio-izquierda-input-numero::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.intermedio-izquierda-boton {
+    border: solid;
+    border-radius: 2rem;
+    font-family: var(--fuente-secundaria);
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2rem;
+    padding-bottom: 0.35rem;
+    width: 15%;
+}
+
+.intermedio-izquierda-boton:hover {}
+
+.intermedio-derecha {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.intermedio-derecha-animacion {
+    flex: 1;
+    width: 23rem;
+}
+
+.intermedio-derecha-boton {
+    border: solid;
+    border-radius: 2rem;
+    font-family: var(--fuente-secundaria);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    padding-bottom: 0.35rem;
+    width: 60%;
+}
+
+.intermedio-derecha-boton:hover {}
+
+.main-resultados {
+    display: flex;
+    font-size: larger;
+    justify-content: space-around;
+    padding: 0rem 4rem;
+}
+
+.pie-de-página {
+    align-items: center;
+    background-color: black;
+    color: white;
+    display: flex;
+    font-family: var(--fuente-alternativa);
+    gap: 1rem;
+    height: auto;
+    justify-content: center;
+    padding: 1rem 0rem;
+}
+
+.pie-de-pagina-span {
+    border-right: 0.2rem solid rgb(255, 255, 255);
+    display: inline-block;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.pie-de-página-enlaces {
+    display: flex;
+}
+
+.enlace-linkedin {
+    height: 2rem;
+    padding-right: 0.5rem;
+}
+
+.enlace-github {
+    height: 2rem;
+    padding-left: 0.5rem;
+}
+
+.modal {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.modal-bloque {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 30%;
+    justify-content: center;
+    margin: 20% auto;
+    width: 60%;
+}
+
+.modal-bloque-titulo {
+    font-size: 3rem;
+}
+
+.modal-bloque-texto {
+    font-size: x-large;
+}
+
+.modal-bloque-boton {
+    font-size: x-large;
+    padding: 1rem;
+}

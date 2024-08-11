@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto Juego de la Moneda">
+    <meta name="keywords" content="moneda">
+    <title>Juego de la Moneda</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <h1>Cara o Cruz</h1>
+    </header>
+    <main class="main">
+        <strong>
+            <p class="main-dinero" id="dinero"></p>
+        </strong>
+        <div class="intermedio">
+            <section class="intermedio-izquierda">
+                <h2 class="intermedio-izquierda-informacion">
+                    Para jugar debes escoger el lado de la moneda <br>
+                    Luego debes ingresar el valor de tu apuesta
+                </h2>
+                <input class="intermedio-izquierda-input-texto" type="text" placeholder="Cara o Cruz" id="lado"
+                    autocomplete="off">
+                <p class="intermedio-izquierda-advertencia">
+                    <span class="intermedio-span">Solo puedes ingresar la palabra "Cara" o "Cruz"</span>
+                    <span class="intermedio-span"> Cualquier otra palabra sera considerada invalida
+                        <br></span>
+                    <span class="intermedio-span"> No se admiten caracteres especiales</span>
+                </p>
+                <input class="intermedio-izquierda-input-numero" type="number" placeholder="Valor de la apuesta"
+                    id="apuesta">
+                <p class="intermedio-izquierda-advertencia">
+                    <span class="intermedio-span"> El valor de la apuesta debe ser mayor a 5000
+                        <br></span>
+                    <span class="intermedio-span"> Tambien debe ser 5000 menos a su dinero
+                        actual</span>
+                </p>
+                <button class="intermedio-izquierda-boton" type="button" onclick="jugar()"
+                    id="botonJugar">Jugar</button>
+            </section>
+            <section class="intermedio-derecha">
+                <img class="intermedio-derecha-animacion" src="/recursos/imagen-ejemplo.svg">
+                <button onclick="repetir()" class="intermedio-derecha-boton" type="button" id="botonRepetir">Volver a
+                    apostar</button>
+            </section>
+        </div>
+        <div class="main-resultados">
+            <p id="victorias"></p>
+            <p id="derrotas"></p>
+        </div>
+    </main>
+    <footer class="pie-de-página">
+        <p>
+            <strong> Página desarrollada por: </strong>
+            <span class="pie-de-pagina-span"><i class="fas fa-user"></i> David Herrera</span>
+            <strong> Contacto: </strong>
+            <span class="pie-de-pagina-span"><i class="fas fa-envelope"></i> davidherrera20020707@gmail.com </span>
+            <span class="pie-de-pagina-span"><i class="fas fa-phone-alt"></i> (57) 314 250 76 00 </span>
+        </p>
+        <div class="pie-de-página-enlaces">
+            <span class="pie-de-pagina-span">
+                <a href="https://www.linkedin.com/in/david-herrera-b709aa2b0/" target="_blank">
+                    <img class="enlace-linkedin" src="./recursos/icono-linkedin.svg" alt="logo-linkedin">
+                </a>
+            </span>
+            <span class="pie-de-pagina-span">
+                <a href="https://github.com/HerreraDa07" target="_blank">
+                    <img class="enlace-github" src="./recursos/icono-git-hub.svg" alt="logo-github">
+                </a>
+            </span>
+        </div>
+    </footer>
+    <div class="modal" id="modal">
+        <div class="modal-bloque">
+            <h3 class="modal-bloque-titulo">¡Has perdido todo tu dinero!</h3>
+            <p class="modal-bloque-texto">Reinicia el juego para volver a empezar</p>
+            <button class="modal-bloque-boton" onclick="boton()">Reiniciar</button>
+        </div>
+    </div>
+    <script src="/script/script.js"></script>
+</body>
+
+</html>
