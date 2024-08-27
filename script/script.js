@@ -90,6 +90,12 @@ function numeroRandom() {
     return lado;
 }
 function reiniciar() {
+    const imagen = document.getElementById("animacion");
+    const monedas = document.createElement("img");
+    monedas.src = "/recursos/monedas.svg";
+    monedas.className = "intermedio-derecha-animacion";
+    monedas.id = "animacion"
+    imagen.parentNode.replaceChild(monedas, imagen);
     dinero = dineroInicial;
     victorias = 0;
     derrotas = 0;

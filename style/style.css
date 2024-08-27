@@ -293,5 +293,91 @@ span:last-child {
     outline: 0.2rem solid var(--color-secundario);
 }
 
-@media (max-width: 64rem){}
-@media (max-width: 48rem){}
+@media (max-width: 64rem) {
+    .intermedio-izquierda-input-texto {
+        width: 60%;
+    }
+
+    .intermedio-izquierda-input-numero {
+        width: 80%;
+    }
+
+    .intermedio-izquierda-boton {
+        width: 40%;
+    }
+}
+
+@media (max-width: 48rem) {
+    .main-dinero {
+        text-align: center;
+    }
+
+    .intermedio {
+        flex-direction: column;
+        padding: 0rem;
+    }
+
+    .intermedio-izquierda {
+        padding: 1rem;
+    }
+
+    .intermedio-izquierda-input-texto {
+        width: 50%;
+    }
+
+    .intermedio-izquierda-input-numero {
+        width: 70%;
+    }
+
+    .intermedio-izquierda-boton {
+        width: 35%;
+    }
+
+    .intermedio-derecha {
+        padding: 1rem 0rem;
+    }
+
+    .intermedio-derecha-animacion {
+        width: 15rem;
+    }
+
+    .main-resultados {
+        align-items: center;
+        gap: 1rem;
+        padding: 0rem;
+        text-align: center;
+    }
+
+    .pie-de-página {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .pie-de-pagina-span {
+        border: none;
+    }
+
+    .modal-bloque {
+        height: 25%;
+        gap: 0.5rem;
+        margin: 85% auto;
+        outline: 0.2rem solid;
+        width: 90%;
+    }
+
+    .modal-bloque-titulo {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .modal-bloque-texto {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .modal-bloque-boton {
+        font-size: xx-large;
+        width: 40%;
+    }
+}
