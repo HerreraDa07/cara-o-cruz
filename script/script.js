@@ -3,6 +3,28 @@ const minima = 5000;
 let derrotas = 0;
 let dinero = 50000;
 let victorias = 0;
+function activarAnimacion(moneda) {
+    const imagen = document.getElementById("animacion");
+    let lado = moneda;
+    const video = document.createElement("video");
+    video.src = "/recursos/Animación.mp4";
+    video.autoplay = true;
+    video.className = "intermedio-derecha-animacion";
+    video.id = "animacion";
+    imagen.parentNode.replaceChild(video, imagen);
+    video.addEventListener('ended', function () {
+        const cara = document.createElement("img");
+        cara.src = "/recursos/cara.svg";
+        cara.className = "intermedio-derecha-animacion";
+        cara.id = "animacion";
+        const cruz = document.createElement("img");
+        cruz.src = "/recursos/cruz.svg";
+        cruz.className = "intermedio-derecha-animacion";
+        cruz.id = "animacion";
+        if (lado == "cara") { video.parentNode.replaceChild(cara, video); }
+        else { video.parentNode.replaceChild(cruz, video); }
+    })
+}
 function boton() {
     const modal = document.getElementById("modal");
     modal.style.display = "none";
@@ -40,6 +62,7 @@ function iniciar() {
 }
 function jugar() {
     let azar = numeroRandom();
+    activarAnimacion(azar);
     let eleccion = document.getElementById("lado");
     let lado = eleccion.value;
     let juego = document.getElementById("apuesta");
@@ -77,6 +100,12 @@ function reiniciar() {
     document.getElementById("botonRepetir").setAttribute("disabled", true);
 }
 function repetir() {
+    const imagen = document.getElementById("animacion");
+    const monedas = document.createElement("img");
+    monedas.src = "/recursos/monedas.svg";
+    monedas.className = "intermedio-derecha-animacion";
+    monedas.id = "animacion"
+    imagen.parentNode.replaceChild(monedas, imagen);
     cambiarTextosHtml("informacion", `Para jugar, debes escoger el lado de la moneda <br>
         Luego debes ingresar el valor de tu apuesta <br>
         Cuando ingreses tu apuesta, no podrás cambiar el lado de la moneda elegido`)

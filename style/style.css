@@ -292,3 +292,6 @@ span:last-child {
     background-color: var(--color-cuatro);
     outline: 0.2rem solid var(--color-secundario);
 }
+
+@media (max-width: 64rem){}
+@media (max-width: 48rem){}
