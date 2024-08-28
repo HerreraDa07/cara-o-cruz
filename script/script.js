@@ -7,18 +7,18 @@ function activarAnimacion(moneda) {
     const imagen = document.getElementById("animacion");
     let lado = moneda;
     const video = document.createElement("video");
-    video.src = "/recursos/Animación.mp4";
+    video.src = "recursos/Animación.mp4";
     video.autoplay = true;
     video.className = "intermedio-derecha-animacion";
     video.id = "animacion";
     imagen.parentNode.replaceChild(video, imagen);
     video.addEventListener('ended', function () {
         const cara = document.createElement("img");
-        cara.src = "/recursos/cara.svg";
+        cara.src = "recursos/cara.svg";
         cara.className = "intermedio-derecha-animacion";
         cara.id = "animacion";
         const cruz = document.createElement("img");
-        cruz.src = "/recursos/cruz.svg";
+        cruz.src = "recursos/cruz.svg";
         cruz.className = "intermedio-derecha-animacion";
         cruz.id = "animacion";
         if (lado == "cara") { video.parentNode.replaceChild(cara, video); }
@@ -92,7 +92,7 @@ function numeroRandom() {
 function reiniciar() {
     const imagen = document.getElementById("animacion");
     const monedas = document.createElement("img");
-    monedas.src = "/recursos/monedas.svg";
+    monedas.src = "recursos/monedas.svg";
     monedas.className = "intermedio-derecha-animacion";
     monedas.id = "animacion"
     imagen.parentNode.replaceChild(monedas, imagen);
@@ -108,7 +108,7 @@ function reiniciar() {
 function repetir() {
     const imagen = document.getElementById("animacion");
     const monedas = document.createElement("img");
-    monedas.src = "/recursos/monedas.svg";
+    monedas.src = "recursos/monedas.svg";
     monedas.className = "intermedio-derecha-animacion";
     monedas.id = "animacion"
     imagen.parentNode.replaceChild(monedas, imagen);
