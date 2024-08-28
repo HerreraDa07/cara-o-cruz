@@ -70,8 +70,8 @@ function jugar() {
     lado == azar ? victorias++ : derrotas++;
     dinero = (lado == azar) ? dinero + apuesta * 2 : dinero - apuesta;
     cambiarTextosHtml("informacion", `Has escogido <span style="color:${lado == azar ? "forestgreen" : "red"}">${lado}</span>
-         y salio <span style="color:${lado == azar ? "forestgreen" : "red"}">${azar}</span> <br>
-         ${lado == azar ? "¡Felicitaciones! Has ganado" : "Has perdido"}`)
+y salio <span style="color:${lado == azar ? "forestgreen" : "red"}">${azar}</span> <br>
+${lado == azar ? "¡Felicitaciones! Has ganado" : "Has perdido"}`)
     document.getElementById("botonJugar").setAttribute("disabled", true);
     document.getElementById("botonRepetir").removeAttribute("disabled");
     document.getElementById("lado").setAttribute("disabled", true);
@@ -113,8 +113,8 @@ function repetir() {
     monedas.id = "animacion"
     imagen.parentNode.replaceChild(monedas, imagen);
     cambiarTextosHtml("informacion", `Para jugar, debes escoger el lado de la moneda <br>
-        Luego debes ingresar el valor de tu apuesta <br>
-        Cuando ingreses tu apuesta, no podrás cambiar el lado de la moneda elegido`)
+Luego debes ingresar el valor de tu apuesta <br>
+Cuando ingreses tu apuesta, no podrás cambiar el lado de la moneda elegido`)
     document.getElementById("lado").removeAttribute("disabled");
     document.getElementById("lado").value = "";
     document.getElementById("apuesta").value = "";
